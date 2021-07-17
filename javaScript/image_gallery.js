@@ -118,7 +118,7 @@ d.addEventListener("click", (e) => {
   }
 
   if (e.target.matches(".btn_buscar")) {
-    const $inputText = d.querySelector(".input-text");
+    const $inputText = d.querySelector(".header__input-text");
     if ($inputText.value !== "") {
       control = 0;
       page = 1;
@@ -126,7 +126,7 @@ d.addEventListener("click", (e) => {
       eliminarElementos();
       getData($inputText.value);
     } else {
-      mostrarMensaje("El cuadro de texto esta vacio");
+      mostrarMensaje("El cuadro de texto esta vacío");
     }
   }
 
@@ -141,11 +141,13 @@ d.addEventListener("click", (e) => {
       }
       control++;
     } else {
-      mostrarMensaje("Llego al límite de busquedas");
+      mostrarMensaje("Llegó al límite de busquedas");
     }
   }
 
   if (e.target.matches(".main__btn-fotos-random")) {
+    const $btnBuscar = d.querySelector(".header__input-text");
+    $btnBuscar.value = "";
     filtro = undefined;
     console.log("entro");
     eliminarElementos();
