@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="CSS/image_gallery.css">
+  <title>Image Gallery</title>
+</head>
+
+<body>
+  <header>
+    <input class="input-text" type="text" placeholder="Ingrese palabra clave">
+    <input class="input-btn" type="button" value="Buscar">
+  </header>
+  <main id="main">
+    <section class="main__section" id="section_image">
+    </section>
+    <div class="div__cargar-mas">
+      <i class="far fa-plus-square" id="mostrar-mas"></i>
+    </div>
+  </main>
+  <div class="div__modal-container" id="div-modal">
+    <div class="div__modal">
+      <img class="div__img">
+      <div class="div__div-contenedor-p">
+        <p class="div__p-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, nesciunt?</p>
+      </div>
+    </div>
+  </div>
+  <div class="div__modal-container" id="modal-mensaje">
+    <div class="div__modal-mensaje">
+      <h1 class="div__h1-mensaje">Ingrese otra palabra clave</h1>
+    </div>
+  </div>
+
+  <!-- Libreria Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/9619deae87.js" crossorigin="anonymous"></script>
+  <!-- Archivo de programación -->
+  <script src="javaScript/image_gallery.js"></script>
+</body>
+
+</html>

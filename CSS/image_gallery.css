@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+/* Cabecera */
+
+header {
+  width: 100%;
+  height: 6rem;
+  background: #181818;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-text {
+  width: 18rem;
+  height: 2rem;
+  padding: 1.2rem;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  border: 0;
+}
+
+.input-btn {
+  width: 7rem;
+  height: 2.6rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  border-style: none;
+  background: #4d4c4c;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.input-btn:hover {
+  background: rgba(77, 76, 76, 0.3);
+}
+
+/* Galeria */
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background: #202020;
+}
+
+.main__section {
+  width: 95%;
+  max-width: 1080px;
+  margin: auto;
+  background: #202020;
+  padding: 1rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30.4rem, 1fr));
+  gap: 1rem;
+}
+
+.main__article {
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.main__article:hover .main__img {
+  filter: blur(0.1rem);
+  transform: rotate(10deg) scale(1.3);
+}
+
+.main__img {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: transform 0.5s;
+}
+
+.div__cargar-mas {
+  width: 100%;
+  padding: 1rem 0 2rem 0;
+  color: rgba(255, 255, 255, 0.8);
+  background: #202020;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.div__cargar-mas i {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.div__cargar-mas i:hover {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Div Modal */
+
+.div__modal-container {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  transform: scale(0);
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.div__modal {
+  width: 90%;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div__img {
+  width: 100%;
+  max-width: 40rem;
+  max-height: 40rem;
+  object-fit: cover;
+  cursor: auto;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.div__div-contenedor-p {
+  width: 100%;
+  max-width: 40rem;
+  padding: 0.6rem;
+  background: #fff;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.div__p-description {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.02rem;
+  text-align: center;
+  color: #181818;
+  margin: 0.7rem 0;
+}
+
+.view {
+  transform: scale(1);
+}
+
+/* Modal Mensaje */
+
+.div__modal-mensaje {
+  width: 80%;
+  height: 15%;
+  background: rgba(32, 32, 32, 0.6);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 0rem 0rem 1rem 1rem rgba(0, 0, 0, 0.3); */
+  /* x, y, blur-radius, spread radius, color */
+}
+
+.div__h1-mensaje {
+  font-size: 1.7rem;
+  font-weight: 400;
+  letter-spacing: 0.02rem;
+  /* color: rgba(0, 0, 0, 5); */
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (min-width: 360px) {
+  .div__h1-mensaje {
+    font-size: 1.9rem;
+  }
+}
+
+@media (min-width: 480px) {
+  /* Cabecera */
+  header {
+    height: 6rem;
+  }
+
+  .input-text {
+    width: 25rem;
+    height: 3rem;
+    margin-right: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  .input-btn {
+    width: 7.3rem;
+    height: 3rem;
+    font-size: 1.6rem;
+  }
+
+  /* Galeria */
+  .main__section {
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  }
+
+  .div__cargar-mas i {
+    font-size: 3.3rem;
+  }
+
+  /* Div Modal */
+  .div__p-description {
+    font-size: 1.6rem;
+    margin: 0.8rem 0;
+  }
+
+  /* Div Modal mensaje */
+  .div__modal-mensaje {
+    max-width: 70%;
+  }
+
+  .div__h1-mensaje {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 950px) {
+  main {
+    height: 100%;
+  }
+
+  /* Galeria */
+  .div__cargar-mas i {
+    font-size: 3.5rem;
+  }
+
+  /* Div Modal mensaje */
+  .div__modal-mensaje {
+    max-width: 50%;
+  }
+
+  .div__h1-mensaje {
+    font-size: 2.5rem;
+  }
+}
