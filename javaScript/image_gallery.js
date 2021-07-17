@@ -47,7 +47,6 @@ const traerDatosUnplash = async (filtro = undefined) => {
       res = await axios.get(`https://api.unsplash.com/photos/random?count=12&client_id=${accesKey}`);
       json = await res.data;
     } else {
-      console.log(page);
       res = await axios.get(`https://api.unsplash.com/search/photos?per_page=12&page=${page}&query=${filtro}&client_id=${accesKey}`);
       json = await res.data.results;
     }
@@ -100,7 +99,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
 
 d.addEventListener("click", (e) => {
   if (e.target.matches(".main__img")) {
-    const $modal = d.getElementById("div-modal"),
+    const $modal = d.getElementById("div-modal-container"),
       $divImg = d.querySelector(".div__img"),
       $divPDescription = d.querySelector(".div__p-description");
 
@@ -109,7 +108,7 @@ d.addEventListener("click", (e) => {
     $modal.classList.add("view");
   }
 
-  if ((e.target.matches(".div__modal-container")) || (e.target.matches(".div__modal"))) {
+  if ((e.target.matches("#div-modal-container")) || (e.target.matches("#div-modal"))) {
     if (e.target.matches(".div__modal")) {
       e.target.parentNode.classList.remove("view");
     } else {
@@ -126,7 +125,7 @@ d.addEventListener("click", (e) => {
       eliminarElementos();
       getData($inputText.value);
     } else {
-      mostrarMensaje("El cuadro de texto esta vacío");
+      mostrarMensaje("El cuadro de texto esta vacio");
     }
   }
 
@@ -136,20 +135,18 @@ d.addEventListener("click", (e) => {
         getData(filtro);
       } else {
         page++;
-        console.log(page);
         getData(filtro);
       }
       control++;
     } else {
-      mostrarMensaje("Llegó al límite de busquedas");
+      mostrarMensaje("Llego al límite de busquedas");
     }
   }
 
   if (e.target.matches(".main__btn-fotos-random")) {
-    const $btnBuscar = d.querySelector(".header__input-text");
-    $btnBuscar.value = "";
+    const $inputText = d.querySelector(".header__input-text");
+    $inputText.value = "";
     filtro = undefined;
-    console.log("entro");
     eliminarElementos();
     getData();
   }

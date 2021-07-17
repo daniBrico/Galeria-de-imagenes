@@ -9,6 +9,10 @@ html {
   font-size: 10px;
 }
 
+body {
+  background: #202020;
+}
+
 /* Cabecera */
 
 .header {
@@ -59,13 +63,13 @@ html {
 
 .main {
   width: 100%;
-  min-height: 100vh;
-  height: auto;
+  min-height: calc(100vh - 11.5rem);
   background: #202020;
 }
 
 .main__section {
   width: 95%;
+  height: auto;
   max-width: 1080px;
   margin: auto;
   background: #202020;
@@ -91,7 +95,6 @@ html {
 .main__article {
   width: 100%;
   display: block;
-  position: relative;
   overflow: hidden;
   border-radius: 0.5rem;
 }
@@ -128,7 +131,7 @@ html {
   transition: color 0.3s;
 }
 
-.main__div-cargar-mas i:hover {
+.div__cargar-mas i:hover {
   color: rgba(255, 255, 255, 0.2);
 }
 
@@ -137,18 +140,22 @@ html {
 .div__modal-container {
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
-  position: fixed;
-  top: 0;
-  left: 0;
   transition: transform 0.3s ease-in-out;
   transform: scale(0);
-  cursor: pointer;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.div-imagen {
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 
 .div__modal {
@@ -173,6 +180,7 @@ html {
 .div__div-contenedor-p {
   width: 100%;
   max-width: 40rem;
+  cursor: auto;
   padding: 0.6rem;
   background: #fff;
   border-bottom-left-radius: 0.5rem;
@@ -194,23 +202,25 @@ html {
 
 /* Modal Mensaje */
 
+.div__mensaje {
+  pointer-events: none;
+}
+
 .div__modal-mensaje {
   width: 80%;
   height: 15%;
-  background: rgba(32, 32, 32, 0.6);
+  background: rgba(32, 32, 32, 0.8);
   border-radius: 1rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  /* box-shadow: 0rem 0rem 1rem 1rem rgba(0, 0, 0, 0.3); */
-  /* x, y, blur-radius, spread radius, color */
 }
 
 .div__h1-mensaje {
   font-size: 1.7rem;
   font-weight: 400;
   letter-spacing: 0.02rem;
-  /* color: rgba(0, 0, 0, 5); */
   color: rgba(255, 255, 255, 0.8);
 }
 
