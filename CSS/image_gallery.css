@@ -11,9 +11,9 @@ html {
 
 /* Cabecera */
 
-header {
+.header {
   width: 100%;
-  height: 6rem;
+  height: 5.5rem;
   background: #181818;
 
   display: flex;
@@ -21,7 +21,7 @@ header {
   align-items: center;
 }
 
-.input-text {
+.header__input-text {
   width: 18rem;
   height: 2rem;
   padding: 1.2rem;
@@ -31,8 +31,6 @@ header {
 }
 
 .input-btn {
-  width: 7rem;
-  height: 2.6rem;
   font-size: 1.5rem;
   font-weight: 500;
   border-radius: 0.5rem;
@@ -40,7 +38,15 @@ header {
   background: #4d4c4c;
   color: #fff;
   cursor: pointer;
+  letter-spacing: 0.03rem;
   transition: all 0.3s;
+  border: 0;
+  outline: 0;
+}
+
+.btn_buscar {
+  width: 7rem;
+  height: 2.6rem;
 }
 
 .input-btn:hover {
@@ -49,7 +55,7 @@ header {
 
 /* Galeria */
 
-main {
+.main {
   width: 100%;
   min-height: 100vh;
   height: auto;
@@ -66,6 +72,18 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30.4rem, 1fr));
   gap: 1rem;
+}
+
+.main__div-btn {
+  width: 95%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.main__btn-fotos-random {
+  margin-top: 1rem;
+  width: 13rem;
+  height: 3rem;
 }
 
 .main__article {
@@ -90,7 +108,7 @@ main {
   transition: transform 0.5s;
 }
 
-.div__cargar-mas {
+.main__div-cargar-mas {
   width: 100%;
   padding: 1rem 0 2rem 0;
   color: rgba(255, 255, 255, 0.8);
@@ -102,7 +120,7 @@ main {
   align-items: center;
 }
 
-.div__cargar-mas i {
+.main__div-cargar-mas i {
   font-size: 3rem;
   cursor: pointer;
   transition: color 0.3s;
@@ -194,6 +212,27 @@ main {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.scroll-top-btn {
+  position: fixed;
+  z-index: 1000;
+  bottom: 1rem;
+  right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  font-weight: 400;
+  border-radius: 50%;
+}
+
+.scroll-top-btn:hover {
+  background: rgba(77, 76, 76, 0.3);
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
 @media (min-width: 360px) {
   .div__h1-mensaje {
     font-size: 1.9rem;
@@ -202,7 +241,7 @@ main {
 
 @media (min-width: 480px) {
   /* Cabecera */
-  header {
+  .header {
     height: 6rem;
   }
 
@@ -213,7 +252,7 @@ main {
     font-size: 1.6rem;
   }
 
-  .input-btn {
+  .btn_buscar {
     width: 7.3rem;
     height: 3rem;
     font-size: 1.6rem;
@@ -224,7 +263,14 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   }
 
-  .div__cargar-mas i {
+  .main__btn-fotos-random {
+    margin-top: 1rem;
+    width: 13rem;
+    height: 3.5rem;
+    font-size: 1.6rem;
+  }
+
+  .main__div-cargar-mas i {
     font-size: 3.3rem;
   }
 
@@ -242,15 +288,22 @@ main {
   .div__h1-mensaje {
     font-size: 2.2rem;
   }
+
+  /* Scroll top btn */
+  .scroll-top-btn {
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+  }
 }
 
 @media (min-width: 950px) {
-  main {
+  .main {
     height: 100%;
   }
 
   /* Galeria */
-  .div__cargar-mas i {
+  .main__div-cargar-mas i {
     font-size: 3.5rem;
   }
 

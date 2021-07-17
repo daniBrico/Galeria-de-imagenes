@@ -11,18 +11,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <!-- CSS principal -->
   <link rel="stylesheet" href="CSS/image_gallery.css">
-  <title>Image Gallery</title>
+  <title>Galería de Imágenes</title>
 </head>
 
 <body>
-  <header>
-    <input class="input-text" type="text" placeholder="Ingrese palabra clave">
-    <input class="input-btn" type="button" value="Buscar">
+  <header class="header">
+    <input class="header__input-text" type="text" placeholder="Ingrese palabra clave">
+    <input class="input-btn btn_buscar" type="button" value="Buscar">
   </header>
-  <main id="main">
+  <main class="main">
+    <div class="main__div-btn">
+      <input class="input-btn main__btn-fotos-random" type="button" value="Fotos random">
+    </div>
     <section class="main__section" id="section_image">
     </section>
-    <div class="div__cargar-mas">
+    <div class="main__div-cargar-mas">
       <i class="far fa-plus-square" id="mostrar-mas"></i>
     </div>
   </main>
@@ -30,7 +33,7 @@
     <div class="div__modal">
       <img class="div__img">
       <div class="div__div-contenedor-p">
-        <p class="div__p-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, nesciunt?</p>
+        <p class="div__p-description"></p>
       </div>
     </div>
   </div>
@@ -39,6 +42,7 @@
       <h1 class="div__h1-mensaje">Ingrese otra palabra clave</h1>
     </div>
   </div>
+  <button class="input-btn scroll-top-btn hidden"><i class="fas fa-arrow-up"></i></button>
 
   <!-- Libreria Axios -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

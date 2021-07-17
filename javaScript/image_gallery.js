@@ -1,4 +1,5 @@
 const d = document,
+  w = window,
   accesKey = "Dr5Pvu60URBR5yKOMWGNWF5nFeY1Ns2UOOv1VTNkX0E";
 let filtro = undefined,
   page = 1,
@@ -79,52 +80,82 @@ const eliminarElementos = () => {
   });
 }
 
-// d.addEventListener("DOMContentLoaded", getData());
+const scrollTopBtn = () => {
+  const $btnScroll = d.querySelector(".scroll-top-btn");
 
-// d.addEventListener("click", (e) => {
-//   if (e.target.matches(".main__img")) {
-//     const $modal = d.getElementById("div-modal"),
-//       $divImg = d.querySelector(".div__img"),
-//       $divPDescription = d.querySelector(".div__p-description");
+  w.addEventListener("scroll", (e) => {
+    let scrollTop = w.pageYOffset || d.documentElement.scrollTop;
+    if (scrollTop > 100) {
+      $btnScroll.classList.remove("hidden");
+    } else {
+      $btnScroll.classList.add("hidden");
+    }
+  });
+}
 
-//     $divImg.setAttribute("src", `${e.target.getAttribute("src")}`);
-//     $divPDescription.textContent = `${e.target.getAttribute("alt")}`;
-//     $modal.classList.add("view");
-//   }
+d.addEventListener("DOMContentLoaded", (e) => {
+  getData();
+  scrollTopBtn();
+});
 
-//   if ((e.target.matches(".div__modal-container")) || (e.target.matches(".div__modal"))) {
-//     if (e.target.matches(".div__modal")) {
-//       e.target.parentNode.classList.remove("view");
-//     } else {
-//       e.target.classList.remove("view");
-//     }
-//   }
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".main__img")) {
+    const $modal = d.getElementById("div-modal"),
+      $divImg = d.querySelector(".div__img"),
+      $divPDescription = d.querySelector(".div__p-description");
 
-//   if (e.target.matches(".input-btn")) {
-//     const $inputText = d.querySelector(".input-text");
-//     if ($inputText.value !== "") {
-//       control = 0;
-//       page = 1;
-//       filtro = $inputText.value;
-//       eliminarElementos();
-//       getData($inputText.value);
-//     } else {
-//       mostrarMensaje("El cuadro de texto esta vacio");
-//     }
-//   }
+    $divImg.setAttribute("src", `${e.target.getAttribute("src")}`);
+    $divPDescription.textContent = `${e.target.getAttribute("alt")}`;
+    $modal.classList.add("view");
+  }
 
-//   if (e.target.matches("#mostrar-mas")) {
-//     if (control < 3) {
-//       if (filtro === undefined) {
-//         getData(filtro);
-//       } else {
-//         page++;
-//         console.log(page);
-//         getData(filtro);
-//       }
-//       control++;
-//     } else {
-//       mostrarMensaje("Llego al límite de busquedas");
-//     }
-//   }
-// });
+  if ((e.target.matches(".div__modal-container")) || (e.target.matches(".div__modal"))) {
+    if (e.target.matches(".div__modal")) {
+      e.target.parentNode.classList.remove("view");
+    } else {
+      e.target.classList.remove("view");
+    }
+  }
+
+  if (e.target.matches(".btn_buscar")) {
+    const $inputText = d.querySelector(".input-text");
+    if ($inputText.value !== "") {
+      control = 0;
+      page = 1;
+      filtro = $inputText.value;
+      eliminarElementos();
+      getData($inputText.value);
+    } else {
+      mostrarMensaje("El cuadro de texto esta vacio");
+    }
+  }
+
+  if (e.target.matches("#mostrar-mas")) {
+    if (control < 3) {
+      if (filtro === undefined) {
+        getData(filtro);
+      } else {
+        page++;
+        console.log(page);
+        getData(filtro);
+      }
+      control++;
+    } else {
+      mostrarMensaje("Llego al límite de busquedas");
+    }
+  }
+
+  if (e.target.matches(".main__btn-fotos-random")) {
+    filtro = undefined;
+    console.log("entro");
+    eliminarElementos();
+    getData();
+  }
+
+  if ((e.target.matches(".scroll-top-btn")) || (e.target.matches(".scroll-top-btn *"))) {
+    w.scrollTo({
+      behavior: "smooth",
+      top: 0,
+    });
+  }
+});
