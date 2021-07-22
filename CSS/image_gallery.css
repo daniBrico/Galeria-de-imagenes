@@ -131,8 +131,8 @@ body {
   transition: color 0.3s;
 }
 
-.div__cargar-mas i:hover {
-  color: rgba(255, 255, 255, 0.2);
+.main__div-cargar-mas i:hover {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /* Div Modal */
